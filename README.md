@@ -2,28 +2,65 @@
 ## Data Cleaning ##
 ### What I Observed ###
 
-I noticed the data was so rough, the columns are not in the right data type, there were duplicates, there were extra spaces and some of the data were not consistent.
+The raw Data was messy:
+1) Wrong data types in Columns
+2) Duplicates Records
+3) Extra Spaces
+4) Inconsistent data entries
 ### What I did ###
-I started with duplicating the dataset,removed duplicates, Changed the whole data type,create a table and named it.
+I cleaned the dataset by:
+Duplicated the dataset, removed duplicates, converted to Table and named it.
 
-For the Department Code, I created another column and I used the UPPERTRIM Function to trim and also change everything to capital Letters, I renamed it and I hid the previous Dept code
+Department Code: Created another column and I used the UPPERTRIM Function to trim and also change everything to capital Letters, renamed it and hid the previous Dept code.
 
-Hire Date: I used Text to Column to change it to Date, I formatted it to Month-Day-year, after that, I changed the data type to short date. 
+Hire Date: Used Text to Column to change it to Date, formatted it to Month-Day-year and changed the data type to short date. 
 
-Salary: I used Text to Columns to change it to General and change the date type to Currency, I removed it from decimal points and make it a whole number. I also removed the blank spaces in the column.
+Salary: Used Text to Columns to change it to General, change the date type to Currency,removed it from decimal points,and used IF and Median to fill the blanks spaces in the column and names it "Estimated Median Salary"
 
-Employment Status: I used the TRIM function to trim the extra spaces and used Find and replace to replace to standardize it.
+Employment Status: Used the TRIM function to trim the extra spaces and used Find and replace to standardize it.
 
 ## The transformation I applied ###
-From the project, I was asked to create some columns like Full name, Department Name, Year of service, Performance Band, and Eligible Bonus amount. 
+From the project, I was asked to create some columns and name them Full name, Department Name, Year of service, Performance Band, and Eligible Bonus amount. 
 
-Full Name: I inserted a column beside Last name and I named it full name, I merged both first name and the last name together using the Trim Function, after merging it togther, I copied the full name and I pasted it again as values so as to delete the first name and the last name. 
+Full Name: Inserted a column beside Last name and named it full name, merged both first name and the last name together using the Trim Function, after merging it togther, I copied the full name and pasted it again as values so as to delete the first name and the last name. 
 
-Department Name: I created another column and named it as Department name, I used Vlookup Function to merge the departmment
+Department Name: Created another column and named it as Department name, used Vlookup Function to merge the departmment
  
-Year of service: I was asked to calculate duration from hire date to today, I used the DATEDIF function to calculate the year of service, i changed the data type to numbers.
+Year of service: I was asked to calculate duration from hire date to today,used the DATEDIF function to calculate the year of service and change the data type to numbers.
 
-Performance band: I used IFS function to get the performance band. There is a performance score in the dataset, so if the Performance score is higher then 95, it should be outstanding, if the performance score is  higher than 85, it should be Exceeding, if the performance score is above 70, it should be Achieving, it it is  higher than 50, it should be Developing but if it is lesser than 49 then it should be less improvement.
+Performance band: Used IFS function to Categorize base on performance score.
+> 95= Outstanding
+> 85= Exceeding
+> 70= Achieving
+> 50= Developing
+< 49= Needs Improvement.
 
-Eligiblle bonus amount: There is a bonus amount that 
+Eligible bonus amount: There is a bonus amount that is for people that have a particular performing score, Used IFS Function to Assign bonus based on score:
+> 95= 0.12
+> 85= 0.08
+> 70= 0.05
+> 50= 0.02
+< 49= 0
+
+Created another column and named it Left/Resigned Band:Used If(OR) Function,0 IF employee left, 1 if employee is still active.
+
+Another Column named Left Band:Used the column to track those that resigned, I classified Terminated, resigned or Retired as Left because they are no longer a staff in the company. I used IF Function to sort it, so that resigned staff will also be classified as "Left" instead of not appearing in the analysis.
+
+Bonus Paid: Estimated Median Salary * Eligible Bonus Amount 
+
+## Issue Encountered ##
+After Merging the first name and the last name, I deleted the first and the last name but I noticed the full name that I merged vanished so I had to undo it, I copied and pasted it as Formula and deleted the first and the last name, it was still the same, I ended pasting it as values.  
+
+For Department Code to; After creating another columnn and using the UPPER(TRIM) Function, I deleted the previous dept code but the second one I did vanished too and I didnt want to paste it as values because we were asked to show our formulas, so,I hid the previous Department Code. 
+
+After inserting another column while doing the pivot tables, my pivot table didnt bring the new column I added, it took a while before I knew that I could refresh the pivot table
+
+## Insight ##
+ The performance and the Eligible bonus Amount shows if those that have high performing score are rewarded excellently. Employee in the Outstanding band collected the highest bonus Amount.
+
+ Attrition Analysis: Using the Left band column, It is easier for us to know the number of staff that left each department.
+
+ With the year of service calculated, we can see the year of experience; majority of staff have more than 2 years of experience.
+
+
 
