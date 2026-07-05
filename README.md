@@ -56,7 +56,7 @@ For Department Code; After creating another columnn and using the UPPER(TRIM) Fu
 After inserting another column while doing the pivot tables, my pivot table didnt bring the new column I added, it took a while before I knew that I could refresh the pivot table
 
 ## Insight ##
-![image alt](https://github.com/Horpeyhemi/HR_ANALYTICS/blob/d3caa3c6f3c2d470a152d9a45fab0834f58abb17/HR%20DASHBOARD.png)
+![image alt](https://github.com/Horpeyhemi/HR_ANALYTICS/blob/8df276dae6d19dc545c08eb08e22953b9170434e/ANALYTIC%20DASHBOARD.png)
 
 
  The performance and the Eligible bonus Amount shows those that have high performing score are rewarded excellently. Employee in the Outstanding band collected the highest bonus Amount.
