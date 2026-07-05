@@ -51,17 +51,22 @@ Bonus Paid: Estimated Median Salary * Eligible Bonus Amount
 ## Issue Encountered ##
 After Merging the first name and the last name, I deleted the first and the last name but I noticed the full name that I merged vanished so I had to undo it, I copied and pasted it as Formula and deleted the first and the last name, it was still the same, I ended pasting it as values.  
 
-For Department Code to; After creating another columnn and using the UPPER(TRIM) Function, I deleted the previous dept code but the second one I did vanished too and I didnt want to paste it as values because we were asked to show our formulas, so,I hid the previous Department Code. 
+For Department Code; After creating another columnn and using the UPPER(TRIM) Function, I deleted the previous dept code but the second one I did vanished too and I didnt want to paste it as values because we were asked to show our formulas, so,I hid the previous Department Code. 
 
 After inserting another column while doing the pivot tables, my pivot table didnt bring the new column I added, it took a while before I knew that I could refresh the pivot table
 
 ## Insight ##
 ![image alt](https://github.com/Horpeyhemi/HR_ANALYTICS/blob/d3caa3c6f3c2d470a152d9a45fab0834f58abb17/HR%20DASHBOARD.png)
- The performance and the Eligible bonus Amount shows if those that have high performing score are rewarded excellently. Employee in the Outstanding band collected the highest bonus Amount.
+
+
+ The performance and the Eligible bonus Amount shows those that have high performing score are rewarded excellently. Employee in the Outstanding band collected the highest bonus Amount.
 
  Attrition Analysis: Using the Left band column, It is easier for us to know the number of staff that left each department.
 
  With the year of service calculated, we can see the year of experience; majority of staff have more than 2 years of experience.
 
+ The IT (Information Technology) department has the highest paying average salary, followed by Finance, this suggest that the company invested well im technical and financial roles than other departments.
+
+ The Sales department has the highest headcount but not the highest average salary.
 
 
