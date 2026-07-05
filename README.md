@@ -69,4 +69,7 @@ After inserting another column while doing the pivot tables, my pivot table didn
 
  The Sales department has the highest headcount but not the highest average salary.
 
+ The "Need Improvement" are not entitled to the bonus because they have have a low performance score 
+ 
+
 
